@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "144889724845",
+    "project_id": "vinder-a5d81",
+    "storage_bucket": "vinder-a5d81.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144889724845:android:caace0c3f3775300906b24",
+        "android_client_info": {
+          "package_name": "com.example.ct312h_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAB1JWAaUP_mAqaDhaqdObihr6S_CEi2kY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
