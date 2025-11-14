@@ -26,7 +26,6 @@ class SexualOrientationScreen extends StatelessWidget {
           TextButton(
             onPressed: () {
               print('Skip button pressed');
-              // TODO: Thêm hành động khi nhấn Skip
             },
             child: const Text(
               'Skip',
@@ -96,8 +95,7 @@ class SexualOrientationScreen extends StatelessWidget {
                   onPressed: () {
                     print(
                       'Next button pressed with selection: ${state.selectedOrientation}',
-                    );
-                    // TODO: Điều hướng sang màn hình tiếp theo
+                    ); 
                   },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),

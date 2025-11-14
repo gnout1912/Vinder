@@ -1,4 +1,6 @@
 import 'package:ct312h_project/blocs/authentication_bloc/authentication_bloc.dart';
+import 'package:ct312h_project/blocs/chat_bloc/chat_bloc.dart';
+import 'package:ct312h_project/screens/chat/chat_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -14,11 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listener: (context, state) {
-        // Nếu user sign out thành công, AuthenticationBloc sẽ emit unauthenticated
         if (state.status == AuthenticationStatus.unauthenticated) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(const SnackBar(content: Text('Đã đăng xuất!')));
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text("Đã đăng xuất!")),
+          );
         }
       },
       child: Scaffold(
@@ -33,21 +34,54 @@ class _HomeScreenState extends State<HomeScreen> {
           actions: [
             IconButton(
               icon: const Icon(Icons.logout, color: Colors.white),
-              tooltip: 'Sign out',
               onPressed: () {
                 context.read<AuthenticationBloc>().userRepository.logOut();
               },
             ),
           ],
         ),
-        body: const Center(
-          child: Text(
-            'Đây là HomeScreen',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Đây là HomeScreen',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 30),
+
+              // ⭐ NÚT TEST CHATSCREEN
+              ElevatedButton(
+                onPressed: () {
+                  final authUser =
+                      context.read<AuthenticationBloc>().state.user!;
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BlocProvider(
+                        create: (_) => ChatBloc(),
+                        child: ChatScreen(
+                          currentUserId: authUser.uid,   // UID thật
+                          peerUserId: "TEST12345",      // tạm test
+                          peerName: "Tester",
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  foregroundColor: Colors.green[600],
+                ),
+                child: const Text("Test Chat"),
+              ),
+            ],
           ),
         ),
       ),

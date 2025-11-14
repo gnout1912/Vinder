@@ -1,4 +1,4 @@
-import 'models/models.dart';
+import 'models/user.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 abstract class UserRepository {

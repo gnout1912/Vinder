@@ -1,0 +1,45 @@
+# Flutter / Dart / Pub
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+
+# Build
+build/
+android/app/build/
+ios/Flutter/Flutter.podspec
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+macos/Flutter/Flutter.podspec
+web/manifest.json
+
+# Firebase generated
+**/firebase_app_id_file.json
+**/google-services.json
+**/GoogleService-Info.plist
+
+# VS Code
+.vscode/
+
+# Android
+*.keystore
+*.jks
+
+# iOS
+DerivedData/
+*.xcworkspace
+*.xcuserstate
+
+# Logs
+*.log
+
+# AAR, APK, IPA
+*.aar
+*.apk
+*.ipa
+packages/user_repository/.flutter-plugins-dependencies
+pubspec.lock
+.flutter-plugins-dependencies
+pubspec.lock

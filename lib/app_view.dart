@@ -1,5 +1,6 @@
 import 'package:ct312h_project/blocs/authentication_bloc/authentication_bloc.dart';
 import 'package:ct312h_project/screens/auth/welcome_screen.dart';
+import 'package:ct312h_project/screens/chat/chat_screen.dart';
 import 'package:ct312h_project/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,6 +11,7 @@ class MyAppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Vinder',
       theme: ThemeData(
         colorScheme: const ColorScheme.light(
@@ -19,9 +21,6 @@ class MyAppView extends StatelessWidget {
           onPrimary: Colors.black,
           secondary: Colors.pinkAccent,
           onSecondary: Colors.white,
-          tertiary: Colors.pink,
-          error: Colors.red,
-          outline: Color(0xFF424242),
         ),
       ),
       home: BlocBuilder<AuthenticationBloc, AuthenticationState>(

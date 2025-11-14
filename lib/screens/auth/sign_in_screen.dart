@@ -1,5 +1,5 @@
 import 'package:ct312h_project/blocs/sign_in_bloc/sign_in_bloc.dart';
-import 'package:ct312h_project/screens/auth/components/my_text_field.dart';
+import 'package:ct312h_project/components/my_text_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
